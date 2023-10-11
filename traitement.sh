@@ -3,8 +3,8 @@
 # ces fichiers seront extraits du repertoire /scratch/I322/DATA/clips 
 # et enregistres dans /Bureau/ReconnaissanceLocuteur/data
 
-input="/scratch/I322/DATA/clips"
-output="/scratch/rbenamir/reconnaissance/data"
+input="data"
+output="data"
 
 for fichier in $input/*.mp3 ; 
 do
