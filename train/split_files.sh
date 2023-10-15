@@ -6,6 +6,7 @@ IFS=$'\t' read -r -a colonnes < "$fichier_entree"
 
 for colonne in "${colonnes[@]}"; do
     nom_fichier=$(echo "$colonne" | tr ' ' '_')
+    echo "$colonne" > "${nom_fichier}.txt"
 done
 
 tail -n +2 "$fichier_entree" | while IFS=$'\t' read -r -a ligne; do
