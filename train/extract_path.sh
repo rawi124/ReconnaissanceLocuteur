@@ -1,4 +1,5 @@
 #!/bin/bash
+#recupere le chemin des fichiers mp3 qu on va traiter
 
 fichier_entree="files.tsv"
 
@@ -8,9 +9,8 @@ fichier_sortie="paths.txt"
 
 while IFS=$'\t' read -r -a colonnes; do
     if [ ${#colonnes[@]} -eq 8 ]; then
-        echo "${colonnes[1]}" >> "$fichier_sortie"
+        echo "${colonnes[1]}.mp3" >> "$fichier_sortie"
     fi
 done < "$fichier_entree"
 
-echo "Extraction des chemins terminée. Les chemins sont stockés dans '$fichier_sortie'."
 

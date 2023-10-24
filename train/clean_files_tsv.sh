@@ -1,4 +1,6 @@
 #!/bin/bash
+#recupere les fichiers qui seront utilisé dans le traitement
+#en ne gardant que les lignes contenant 8 colonnes
 
 fichier_entree="files.tsv"
 
