@@ -1,9 +1,10 @@
 input="/home/etudiants/rbenamir142/Bureau/ReconnaissanceLocuteur/train/files_clean.tsv"
 output="/home/etudiants/rbenamir142/Bureau/ReconnaissanceLocuteur/train/samples"
+#input="../train/files_clean.tsv"
+#output="../train/samples"
+nb_fichier=19200
 
-nb_fichier=9600
-
-awk -F'\t' '{print $2 "\t" $7}' "$input" | head -n "$nb_fichier" > "$output"
+awk -F'\t' '{print $2 ".lab" "\n" $7}' "$input" | head -n "$nb_fichier" > "$output"
 
 
 
