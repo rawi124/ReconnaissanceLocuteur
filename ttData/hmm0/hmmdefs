@@ -1,4 +1,4 @@
-~h "homme"
+~h "male"
 <BEGINHMM>
 <NUMSTATES> 3
 <STATE> 2
@@ -14,7 +14,7 @@
 <ENDHMM>
 
 
-~h "femme"
+~h "female"
 <BEGINHMM>
 <NUMSTATES> 3
 <STATE> 2
