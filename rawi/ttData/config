@@ -1,0 +1,22 @@
+# Coding parameters
+#!/bin/bash
+# Coding parameters
+SOURCEFORMAT=NOHEAD       # Indicates the files are in raw format (headerless)
+SOURCEKIND=WAVEFORM
+SOURCERATE=208.33         # 1/441000 * 1E7
+SOURCECHANS=1             # single channel
+TARGETKIND=MFCC_0_D_A
+TARGETRATE=100000.0       # 10ms frame rate
+NATURALREADORDER=T
+NATURALWRITEORDER=T
+SAVECOMPRESSED=F
+SAVEWITHCRC=F
+WINDOWSIZE=250000.0
+USEHAMMING=T
+PREEMCOEF=0.97
+NUMCHANS=26
+CEPLIFTER=22              # Commonly used liftering value
+NUMCEPS=12                # Number of MFCCs to extract (not including the energy term)
+HIGHTHRESH=0.0            # For voice activity detection, if used
+LOWTHRESH=0.0             # For voice activity detection, if used
+
