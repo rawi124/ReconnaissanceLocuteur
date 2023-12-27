@@ -16,29 +16,29 @@ Dans l'ensemble, ce mini-projet offre une opportunité passionnante d'appliquer 
 les commandes consecutives à lancer sont : 
 
 
-###hcopy
+### hcopy
 ./HCopy -T 1 -C /home/rawi/ReconnaissanceLocuteur/ttData/config -S /home/rawi/ReconnaissanceLocuteur/script/fich_sortie/codetr.scp
 
-###hcomp
+### hcomp
 
 ./HCompV -C /home/rawi/ReconnaissanceLocuteur/ttData/config -f 0.01 -m -S /home/rawi/ReconnaissanceLocuteur/script/fich_sortie/train.scp -M /home/rawi/ReconnaissanceLocuteur/script/fich_sortie/hmm0 /home/rawi/ReconnaissanceLocuteur/script/fich_sortie/proto
 
 
-###Hrest
+### Hrest
 
  ./HERest -C /home/rawi/ReconnaissanceLocuteur/ttData/config -I /home/rawi/ReconnaissanceLocuteur/script/fich_sortie/phones0.mlf -t 250.0 150.0 1000.0 -S /home/rawi/ReconnaissanceLocuteur/script/fich_sortie/train.scp -H /home/rawi/ReconnaissanceLocuteur/ttData/hmm1/macros -H /home/rawi/ReconnaissanceLocuteur/ttData/hmm1/hmmdefs -M /home/rawi/ReconnaissanceLocuteur/ttData/hmm2 /home/rawi/ReconnaissanceLocuteur/ttData/monophones0
 
 
-###hparse
+### hparse
 
  ./HParse /home/rawi/ReconnaissanceLocuteur/ttData/grammar.txt /home/rawi/ReconnaissanceLocuteur/ttData/grammar.net
 
 
-###hvite
+### hvite
 
 ./HVite -C /home/rawi/ReconnaissanceLocuteur/ttData/config -H /home/rawi/ReconnaissanceLocuteur/ttData/hmm1/hmmdefs -w /home/rawi/ReconnaissanceLocuteur/ttData/grammar.net -i /home/rawi/ReconnaissanceLocuteur/ttData/sortie_vite.mlf /home/rawi/ReconnaissanceLocuteur/ttData/lex.dic /home/rawi/ReconnaissanceLocuteur/ttData/hmmL.txt -S /home/rawi/ReconnaissanceLocuteur/script/fich_sortie/train.scp
 
-###partie de test
+### partie de test
   308  ./HVite -C /home/rawi/ReconnaissanceLocuteur/ttData/config -H /home/rawi/ReconnaissanceLocuteur/ttData/hmm1/hmmdefs -w /home/rawi/ReconnaissanceLocuteur/ttData/grammar.net -i /home/rawi/ReconnaissanceLocuteur/ttData/sortie_vite.mlf /home/rawi/ReconnaissanceLocuteur/ttData/lex.dic /home/rawi/ReconnaissanceLocuteur/ttData/hmmL.txt -S /home/rawi/ReconnaissanceLocuteur/script/fich_sortie/test.scp
   309  ./HResults -I /home/rawi/ReconnaissanceLocuteur/script/fich_sortie/phones0_test.mlf /home/rawi/ReconnaissanceLocuteur/ttData/monophones0 /home/rawi/ReconnaissanceLocuteur/ttData/sortie_vite.mlf
 ##Resultats 
