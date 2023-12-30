@@ -77,4 +77,15 @@ SENT: %Correct=11.36 [H=557, S=4346, N=4903]
 WORD: %Corr=11.36, Acc=11.36 [H=557, D=0, S=4346, I=0, N=4903]
 ===================================================================
 
+
+ ./HVite -C /home/rawi/ReconnaissanceLocuteur/rawi/ttData/config -H /home/rawi/ReconnaissanceLocuteur/nvData/fich_sortie/hmm2/hmmdefs -w /home/rawi/ReconnaissanceLocuteur/rawi/ttData/grammar.net -i /home/rawi/ReconnaissanceLocuteur/nvData/fich_sortie/sortie_vite_test.mlf /home/rawi/ReconnaissanceLocuteur/rawi/ttData/lex.dic /home/rawi/ReconnaissanceLocuteur/rawi/ttData/hmmL.txt -S /home/rawi/ReconnaissanceLocuteur/nvData/fich_sortie/test.scp && ./HResults -I /home/rawi/ReconnaissanceLocuteur/nvData/fich_sortie/phones0_test.mlf /home/rawi/ReconnaissanceLocuteur/rawi/ttData/monophones0 /home/rawi/ReconnaissanceLocuteur/nvData/fich_sortie/sortie_vite_test.mlf
+====================== HTK Results Analysis =======================
+  Date: Sat Dec 30 19:28:37 2023
+  Ref : /home/rawi/ReconnaissanceLocuteur/nvData/fich_sortie/phones0_test.mlf
+  Rec : >e/rawi/ReconnaissanceLocuteur/nvData/fich_sortie/sortie_vite_test.mlf
+------------------------ Overall Results --------------------------
+SENT: %Correct=5.91 [H=1785, S=28412, N=30197]
+WORD: %Corr=5.91, Acc=5.91 [H=1785, D=0, S=28412, I=0, N=30197]
+===================================================================
+
 sachant qu'il faut adapter dans les scripts les endroits des dossiers
