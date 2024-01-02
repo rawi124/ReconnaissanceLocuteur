@@ -89,3 +89,37 @@ WORD: %Corr=5.91, Acc=5.91 [H=1785, D=0, S=28412, I=0, N=30197]
 ===================================================================
 
 sachant qu'il faut adapter dans les scripts les endroits des dossiers
+
+
+
+
+## HERest iterations
+
+En lancant le script hrest_train.sh on exécute HERest 5 fois
+
+dd@dd-VirtualBox:~/HTK_PROJECT/script$ bash hrest_train.sh 
+Iteration 1
+Pruning-On[250.0 150.0 1000.0]
+Iteration 2
+Pruning-On[250.0 150.0 1000.0]
+Iteration 3
+Pruning-On[250.0 150.0 1000.0]
+Iteration 4
+Pruning-On[250.0 150.0 1000.0]
+Iteration 5
+Pruning-On[250.0 150.0 1000.0]
+Terminé!
+
+
+dd@dd-VirtualBox:~/HTK_PROJECT/HTK/HTKTools$ ./HVite -C ~/HTK_PROJECT/traitement/config -H ~/HTK_PROJECT/models/hmm5/hmmdefs -w ~/HTK_PROJECT/traitement/grammar.net -i ~/HTK_PROJECT/traitement/viteRes ~/HTK_PROJECT/traitement/lex.dic ~/HTK_PROJECT/traitement/monophones0 -S ~/HTK_PROJECT/traitement/testset.scp
+dd@dd-VirtualBox:~/HTK_PROJECT/HTK/HTKTools$ ./HResults -I ~/HTK_PROJECT/traitement/phones0_all.mlf ~/HTK_PROJECT/traitement/monophones0 ~/HTK_PROJECT/traitement/viteRes 
+====================== HTK Results Analysis =======================
+  Date: Tue Jan  2 19:47:10 2024
+  Ref : /home/dd/HTK_PROJECT/traitement/phones0_all.mlf
+  Rec : /home/dd/HTK_PROJECT/traitement/viteRes
+------------------------ Overall Results --------------------------
+SENT: %Correct=89.61 [H=5858, S=679, N=6537]
+WORD: %Corr=89.61, Acc=89.61 [H=5858, D=0, S=679, I=0, N=6537]
+===================================================================
+
+
