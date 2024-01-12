@@ -19,18 +19,18 @@ Ainsi un model HMM peut etre composé d'une séquence d'etats cachés et chacun 
 les commandes consecutives à lancer seront : 
 
 
-### hcopy
+### HCopy
 cette commande est utilisé pour generer les fichiers MFC (qui representent les caracteristiques spectrales d'un signal audio) à partir des fichiers audios bruts en utilisant les parametres de configurations di fochier config.
 ./HCopy -T 1 -C /home/rawi/ReconnaissanceLocuteur/ttData/config -S /home/rawi/ReconnaissanceLocuteur/script/fich_sortie/codetr.scp
 
-### hcompv
+### HCompV
 
 hcompv initialise les models acoustiques en calculant la moyenne et la variance globales sur un ensemble de données. Les modéles resultants seront stockés dans le repertoire hmm0.
 
 ./HCompV -C /home/rawi/ReconnaissanceLocuteur/ttData/config -f 0.01 -m -S /home/rawi/ReconnaissanceLocuteur/script/fich_sortie/train.scp -M /home/rawi/ReconnaissanceLocuteur/script/fich_sortie/hmm0 /home/rawi/ReconnaissanceLocuteur/script/fich_sortie/proto
 
 
-### Hrest
+### HERest
 effectue le processus d'estimation des modèles HMM en utilisant les données d'entraînement fournies. Elle réestime les paramètres des modèles acoustiques, tels que les moyennes et les variances, pour mieux correspondre aux caractéristiques des données d'entraînement. Les itérations continueront jusqu'à ce que les critères de convergence spécifiés soient atteints.
 
 
@@ -38,16 +38,9 @@ effectue le processus d'estimation des modèles HMM en utilisant les données d'
 
 
  ./HERest -C /home/rawi/ReconnaissanceLocuteur/rawi/ttData/config -I /home/rawi/ReconnaissanceLocuteur/rawi/script/fich_sortie/phones0_train.mlf -t 350.0 250.0 1200.0 -S /home/rawi/ReconnaissanceLocuteur/rawi/script/fich_sortie/train.scp -H /home/rawi/ReconnaissanceLocuteur/rawi/script/fich_sortie/hmm1/macros -H /home/rawi/ReconnaissanceLocuteur/rawi/script/fich_sortie/hmm1/hmmdefs -M /home/rawi/ReconnaissanceLocuteur/rawi/script/fich_sortie/hmm2 /home/rawi/ReconnaissanceLocuteur/rawi/ttData/monophones0
-
  
 
-
-### hparse
-
- ./HParse /home/rawi/ReconnaissanceLocuteur/ttData/grammar.txt /home/rawi/ReconnaissanceLocuteur/ttData/grammar.net
-
-
-### hvite
+### HVite
 
 ./HVite -C /home/rawi/ReconnaissanceLocuteur/rawi/ttData/config -H /home/rawi/ReconnaissanceLocuteur/rawi/ttData/hmm2/hmmdefs -w /home/rawi/ReconnaissanceLocuteur/rawi/ttData/grammar.net -i /home/rawi/ReconnaissanceLocuteur/rawi/ttData/sortie_vite_train.mlf /home/rawi/ReconnaissanceLocuteur/rawi/ttData/lex.dic /home/rawi/ReconnaissanceLocuteur/rawi/ttData/hmmL.txt -S /home/rawi/ReconnaissanceLocuteur/rawi/script/fich_sortie/train.scp
 
@@ -89,37 +82,5 @@ WORD: %Corr=5.91, Acc=5.91 [H=1785, D=0, S=28412, I=0, N=30197]
 ===================================================================
 
 sachant qu'il faut adapter dans les scripts les endroits des dossiers
-
-
-
-
-## HERest iterations
-
-En lancant le script hrest_train.sh on exécute HERest 5 fois
-
-dd@dd-VirtualBox:~/HTK_PROJECT/script$ bash hrest_train.sh 
-Iteration 1
-Pruning-On[250.0 150.0 1000.0]
-Iteration 2
-Pruning-On[250.0 150.0 1000.0]
-Iteration 3
-Pruning-On[250.0 150.0 1000.0]
-Iteration 4
-Pruning-On[250.0 150.0 1000.0]
-Iteration 5
-Pruning-On[250.0 150.0 1000.0]
-Terminé!
-
-
-dd@dd-VirtualBox:~/HTK_PROJECT/HTK/HTKTools$ ./HVite -C ~/HTK_PROJECT/traitement/config -H ~/HTK_PROJECT/models/hmm5/hmmdefs -w ~/HTK_PROJECT/traitement/grammar.net -i ~/HTK_PROJECT/traitement/viteRes ~/HTK_PROJECT/traitement/lex.dic ~/HTK_PROJECT/traitement/monophones0 -S ~/HTK_PROJECT/traitement/testset.scp
-dd@dd-VirtualBox:~/HTK_PROJECT/HTK/HTKTools$ ./HResults -I ~/HTK_PROJECT/traitement/phones0_all.mlf ~/HTK_PROJECT/traitement/monophones0 ~/HTK_PROJECT/traitement/viteRes 
-====================== HTK Results Analysis =======================
-  Date: Tue Jan  2 19:47:10 2024
-  Ref : /home/dd/HTK_PROJECT/traitement/phones0_all.mlf
-  Rec : /home/dd/HTK_PROJECT/traitement/viteRes
------------------------- Overall Results --------------------------
-SENT: %Correct=89.61 [H=5858, S=679, N=6537]
-WORD: %Corr=89.61, Acc=89.61 [H=5858, D=0, S=679, I=0, N=6537]
-===================================================================
 
 
